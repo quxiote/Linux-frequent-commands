@@ -1,0 +1,34 @@
+
+qstat –f
+
+qstat -F
+
+
+#Listing que resources
+qconf -sq default.q | less
+
+qstat -g d -u \*
+
+qstat -g c
+
+
+qstat -f -q "default.q@cluscnzj*"
+qstat -f -q "legacy.q@cluscnzj*"
+
+
+qstat -f -q "default.q@cluscnzj*" -qs d
+
+#list -pe EVN
+qconf -sq legacy.q 
+
+pe_list               orte,smp,orte-rr,matlab,make,peomics
+
+qsub -pe orte 12 SAR_PORTAL_TASKID_20190309145624761411126.sh
+
+
+qstat -u \* -s r 
+
+qstat -u \* -r
+
+
+
